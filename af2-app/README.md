@@ -15,9 +15,11 @@ Installation:
 Clone this repository:
 
 Bash
-https://github.com/sliitcsse/se3040-assignment02-IT21209352?tab=readme-ov-file
-https://github.com/sliitcsse/se3040-assignment02-IT21209352/tree/main/af2-app
-git clone https://github.com/IT21209352/nasa-image-explorer.git
+
+git clone 
+https://github.com/IT21209352/NASAImageBrowser.git
+https://github.com/sliitcsse/se3040-assignment02-IT21209352
+
 
 
 Navigate to the project directory:
