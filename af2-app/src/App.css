@@ -1,0 +1,36 @@
+.header {
+    top: 0;
+    left: 0;
+    position: fixed;
+    min-width: 100%;
+    background-color: #ffffff; /* Change the background color as needed */
+    color: #fff; /* Change the text color as needed */
+    z-index: 1000; /* Ensure it's above other content */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    margin-bottom: 5px;
+  }
+  
+  .bodyContent {
+    margin-top: 60px; /* Adjust according to the height of your header */
+    padding: 20px; /* Adjust padding as needed */
+   
+  }
+
+  body{
+    background-image: url(../src/assets/back3.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+  }
+  .root {
+    min-width: 500px; 
+    min-height: 550px; 
+  
+  }
+  html, body, #root {
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }

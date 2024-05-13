@@ -1,0 +1,11 @@
+.root {
+    min-width: 500px; 
+    min-height: 550px; 
+  
+  }
+  html, body, #root {
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
