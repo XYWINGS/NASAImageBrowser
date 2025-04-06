@@ -1,80 +1,98 @@
 
-NASA Image Explorer # React + Vite
-NETLIFY DEPLOYED URL 
-https://nasaimagebrowser.netlify.app
+# 🚀 NASA Image Explorer — React + Vite
 
-This React application allows you to explore images from NASA's public APIs, showcasing Mars rover photos, EPIC imagery, and Astronomy Picture of the Day (APOD).
+🌐 **Live Demo**: [nasaimagebrowser.netlify.app](https://nasaimagebrowser.netlify.app)
 
-Project Setup
+This React application allows you to explore images from NASA's public APIs, showcasing:
 
-Prerequisites:
-Node.js and npm  installed on your system.
+- Mars Rover Photos  
+- EPIC (Earth Polychromatic Imaging Camera) Imagery  
+- Astronomy Picture of the Day (APOD)
 
-Installation:
+---
+
+## 🛠️ Project Setup
+
+### 📋 Prerequisites
+- [Node.js](https://nodejs.org/) and npm installed on your system.
+
+### 📦 Installation
+
 Clone this repository:
+```bash
+git clone https://github.com/XYWINGS/NASAImageBrowser.git
+```
 
-Bash
-
-git clone 
-https://github.com/IT21209352/NASAImageBrowser.git
-https://github.com/sliitcsse/se3040-assignment02-IT21209352
-
-
-Navigate to the project directory:
-
-Install dependencies:
-Bash
+Navigate to the project directory and install dependencies:
+```bash
+cd NASAImageBrowser
 npm install
+```
 
+Add your NASA API key to a `.env` file:
+```env
+VITE_NASA_API_KEY=your_api_key_here
+```
 
+---
 
-Usage
+## 🚀 Usage
+
 Start the development server:
-
-Bash
+```bash
 npm start
+```
 
-This will start a local development server at http://localhost:3000/. The application will automatically reload in the browser when you make changes to the code.
+This starts a local server at **[http://localhost:3000](http://localhost:3000)**. The app auto-reloads on code changes.
 
-Explore the application:
+### 🔎 Explore the App:
+- Navigate between **Mars Rovers**, **EPIC**, and **APOD** sections.
+- In **Mars Rovers**, select a rover to view images from it.
+- **EPIC** shows real-time Earth images from the DSCOVR satellite.
+- **APOD** shows a new astronomy image with an explanation daily.
 
-Use the navigation bar or buttons to switch between Mars Rovers, EPIC, and APOD sections.
-In the Mars Rovers section, select a rover from the dropdown to view its images.
-The EPIC section displays a live feed of Earth captured by the DSCOVR satellite.
-The APOD section showcases a new astronomy image and explanation every day.
-Build for Deployment
-To create an optimized production build of the application, run:
+---
 
-Bash
+## 🏗️ Build for Deployment
+
+To create a production build:
+```bash
 npm run build
-This will create a build folder containing the production-ready application files.
+```
 
+This generates a `dist/` folder with the production-ready app.
 
-APIs Used:
-Mars Rover Photos API 2024-02-19 CURIOSITY
-EPIC API  2024-03-26
-APOD API ANY
+---
 
-Challenges Faced:
+## 🔌 APIs Used
 
-Handling API Rate Limits: Both EPIC and APOD APIs have rate limits. The application could potentially exceed these limits if used excessively.
-Error Handling: Implementing robust error handling for potential API failures or network issues to ensure a smooth user experience.
-Data Caching: Caching frequently accessed data can improve performance by reducing the number of API requests.
-Solutions:
+| API | Description | Example Date |
+|-----|-------------|--------------|
+| [Mars Rover Photos API](https://api.nasa.gov/) | Curiosity rover photos | `2024-02-19` |
+| [EPIC API](https://epic.gsfc.nasa.gov/) | Earth images | `2024-03-26` |
+| [APOD API](https://api.nasa.gov/) | Astronomy Picture of the Day | Any Date |
 
-API Rate Limit Awareness: The application can implement logic to respect API rate limits and display appropriate messages if limits are exceeded.
-Error Handling: Implement error boundaries and informative messages to handle API failures or network issues gracefully.
-Data Caching: Consider implementing a caching mechanism for frequently accessed data like APOD images, reducing unnecessary API calls.
+---
 
-to run test cases
+## ⚠️ Challenges Faced
+
+- **API Rate Limits**: NASA APIs have usage limits that can be exceeded.
+- **Error Handling**: Needed to gracefully handle failed requests or network issues.
+- **Data Caching**: To improve performance and reduce API usage.
+
+### ✅ Solutions
+
+- **Rate Limit Awareness**: Added logic to respect limits and show messages when exceeded.
+- **Error Handling**: Implemented error boundaries and fallback messages.
+- **Caching**: Considered local storage or memory caching for high-use data like APOD.
+
+---
+
+## 🧪 Running Tests
+
+Run test cases with:
+```bash
 npx jest src/HomePage.test.js
 npx jest src/MarsImages.test.js
 npx jest src/PictureoftheDay.test.js
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
+```
