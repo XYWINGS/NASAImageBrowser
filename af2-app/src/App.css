@@ -1,7 +1,6 @@
 .header {
     top: 0;
     left: 0;
-    position: fixed;
     min-width: 100%;
     background-color: #ffffff; /* Change the background color as needed */
     color: #fff; /* Change the text color as needed */

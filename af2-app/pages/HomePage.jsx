@@ -12,13 +12,11 @@ import {
   TextField,
   Container,
   Fade,
-  Skeleton,
   Chip,
   Card,
   CardContent,
   IconButton,
   Tooltip,
-  Alert
 } from '@mui/material';
 import { styled, keyframes } from '@mui/material/styles';
 import {
@@ -27,7 +25,6 @@ import {
   Clear,
   Public,
   Satellite,
-  Download,
   Fullscreen
 } from '@mui/icons-material';
 import Snackbar from '../components/snackbar.jsx';
@@ -44,9 +41,8 @@ const shimmer = keyframes`
   100% { background-position: calc(200px + 100%) 0; }
 `;
 
-// Enhanced styled components
 const StyledContainer = styled(Container)(({ theme }) => ({
-  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+  // background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
   minHeight: '100vh',
   padding: theme.spacing(4, 2),
   position: 'relative',
@@ -160,7 +156,7 @@ const HomePage = () => {
       const selectedDate = new Date(date);
       const response = await axios.get(`https://epic.gsfc.nasa.gov/api/enhanced/date/${date}`);
       const data = response.data;
-      
+
       if (data.length === 0) {
         setSnackMessage("No pictures captured on the selected day");
         setOpenSnackbar(true);
@@ -182,7 +178,7 @@ const HomePage = () => {
           identifier: item.identifier
         };
       });
-      
+
       setPictures(pictureData);
       setSnackMessage(`Found ${pictureData.length} images from ${date}`);
       setOpenSnackbar(true);
@@ -208,9 +204,9 @@ const HomePage = () => {
 
   return (
     <StyledContainer maxWidth="xl">
-      <Snackbar 
-        open={openSnackbar} 
-        handleClose={handleCloseSnackbar} 
+      <Snackbar
+        open={openSnackbar}
+        handleClose={handleCloseSnackbar}
         message={snackMessage}
       />
 
@@ -220,10 +216,10 @@ const HomePage = () => {
           <Satellite sx={{ mr: 2, fontSize: 'inherit' }} />
           NASA EPIC Earth Images
         </AnimatedTitle>
-        <Typography 
-          variant="h6" 
-          sx={{ 
-            color: 'rgba(255,255,255,0.8)', 
+        <Typography
+          variant="h6"
+          sx={{
+            color: 'rgba(255,255,255,0.8)',
             textAlign: 'center',
             fontWeight: 300,
             letterSpacing: '0.05em'
@@ -270,7 +266,7 @@ const HomePage = () => {
               />
             </Box>
           </Grid>
-          
+
           <Grid item xs={12} md={4}>
             <Button
               variant="contained"
@@ -297,7 +293,7 @@ const HomePage = () => {
               {loading ? 'Searching...' : 'Get Images'}
             </Button>
           </Grid>
-          
+
           <Grid item xs={12} md={2}>
             <Button
               variant="outlined"
@@ -393,8 +389,8 @@ const HomePage = () => {
 
       {/* Empty State */}
       {pictures.length === 0 && !loading && (
-        <Card sx={{ 
-          background: 'rgba(255,255,255,0.1)', 
+        <Card sx={{
+          background: 'rgba(255,255,255,0.1)',
           backdropFilter: 'blur(10px)',
           textAlign: 'center',
           py: 8

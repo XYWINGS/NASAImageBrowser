@@ -19,7 +19,6 @@ import {
   Dialog,
   DialogContent,
   DialogTitle,
-  DialogActions
 } from '@mui/material';
 import { styled, keyframes } from '@mui/material/styles';
 import {
@@ -29,11 +28,8 @@ import {
   Stars,
   Fullscreen,
   Share,
-  Favorite,
-  Info,
   Close
 } from '@mui/icons-material';
-import Card from '../components/card.jsx';
 import Snackbar from '../components/snackbar.jsx';
 
 // Animations
@@ -49,7 +45,6 @@ const drift = keyframes`
   100% { transform: translateX(0) translateY(0); }
 `;
 
-// Enhanced styled components
 const CosmicContainer = styled(Container)(({ theme }) => ({
   background: 'linear-gradient(180deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%)',
   minHeight: '100vh',
@@ -189,7 +184,7 @@ const PictureOftheDay = () => {
 
   const fetchPictureOfTheDay = async () => {
     setLoading(true);
-    
+
     if (date) {
       const today = new Date();
       const june16_1995 = new Date('1995-06-16');
@@ -277,9 +272,9 @@ const PictureOftheDay = () => {
 
   return (
     <CosmicContainer maxWidth="xl">
-      <Snackbar 
-        open={openSnackbar} 
-        handleClose={handleCloseSnackbar} 
+      <Snackbar
+        open={openSnackbar}
+        handleClose={handleCloseSnackbar}
         message={snackMessage}
       />
 
@@ -289,10 +284,10 @@ const PictureOftheDay = () => {
           <Stars sx={{ mr: 2, fontSize: 'inherit' }} />
           Astronomy Picture of the Day
         </CosmicTitle>
-        <Typography 
-          variant="h6" 
-          sx={{ 
-            color: 'rgba(255,255,255,0.8)', 
+        <Typography
+          variant="h6"
+          sx={{
+            color: 'rgba(255,255,255,0.8)',
             textAlign: 'center',
             fontWeight: 300,
             letterSpacing: '0.05em'
@@ -337,7 +332,7 @@ const PictureOftheDay = () => {
               />
             </Box>
           </Grid>
-          
+
           <Grid item xs={12} md={4}>
             <Button
               variant="contained"
@@ -364,7 +359,7 @@ const PictureOftheDay = () => {
               {loading ? 'Searching cosmos...' : date ? 'Get APOD' : 'Get Today\'s APOD'}
             </Button>
           </Grid>
-          
+
           <Grid item xs={12} md={2}>
             <Button
               variant="outlined"
@@ -393,25 +388,25 @@ const PictureOftheDay = () => {
       {/* Loading State */}
       {loading && (
         <Box sx={{ mb: 4 }}>
-          <Skeleton 
-            variant="rectangular" 
-            height={400} 
-            sx={{ 
+          <Skeleton
+            variant="rectangular"
+            height={400}
+            sx={{
               borderRadius: 3,
               background: 'linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%)',
               mb: 2
-            }} 
+            }}
           />
-          <Skeleton 
-            variant="text" 
-            height={40} 
-            sx={{ background: 'rgba(255,255,255,0.1)', mb: 1 }} 
+          <Skeleton
+            variant="text"
+            height={40}
+            sx={{ background: 'rgba(255,255,255,0.1)', mb: 1 }}
           />
-          <Skeleton 
-            variant="text" 
-            height={20} 
-            width="60%" 
-            sx={{ background: 'rgba(255,255,255,0.1)' }} 
+          <Skeleton
+            variant="text"
+            height={20}
+            width="60%"
+            sx={{ background: 'rgba(255,255,255,0.1)' }}
           />
         </Box>
       )}
@@ -462,14 +457,14 @@ const PictureOftheDay = () => {
                   />
                 </Box>
               )}
-              
+
               <CardContent sx={{ p: 4 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
-                  <Typography 
-                    variant="h4" 
-                    component="h2" 
-                    sx={{ 
-                      color: 'white', 
+                  <Typography
+                    variant="h4"
+                    component="h2"
+                    sx={{
+                      color: 'white',
                       fontWeight: 600,
                       flex: 1,
                       mr: 2
@@ -479,9 +474,9 @@ const PictureOftheDay = () => {
                   </Typography>
                   <Box sx={{ display: 'flex', gap: 1 }}>
                     <Tooltip title="Share">
-                      <IconButton 
+                      <IconButton
                         onClick={shareContent}
-                        sx={{ 
+                        sx={{
                           color: 'rgba(255,255,255,0.7)',
                           '&:hover': { color: '#64b5f6' }
                         }}
@@ -491,23 +486,23 @@ const PictureOftheDay = () => {
                     </Tooltip>
                   </Box>
                 </Box>
-                
-                <Typography 
-                  variant="body1" 
-                  sx={{ 
-                    color: 'rgba(255,255,255,0.8)', 
+
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: 'rgba(255,255,255,0.8)',
                     lineHeight: 1.6,
                     fontSize: '1.1rem'
                   }}
                 >
                   {pictureOfTheDay.explanation}
                 </Typography>
-                
+
                 {pictureOfTheDay.copyright && (
-                  <Typography 
-                    variant="caption" 
-                    sx={{ 
-                      color: 'rgba(255,255,255,0.5)', 
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      color: 'rgba(255,255,255,0.5)',
                       mt: 2,
                       display: 'block'
                     }}
@@ -523,8 +518,8 @@ const PictureOftheDay = () => {
 
       {/* Empty State */}
       {Object.keys(pictureOfTheDay).length === 0 && !loading && (
-        <Card sx={{ 
-          background: 'rgba(255,255,255,0.05)', 
+        <Card sx={{
+          background: 'rgba(255,255,255,0.05)',
           backdropFilter: 'blur(10px)',
           border: '1px solid rgba(255,255,255,0.1)',
           textAlign: 'center',
@@ -555,9 +550,9 @@ const PictureOftheDay = () => {
           }
         }}
       >
-        <DialogTitle sx={{ 
-          display: 'flex', 
-          justifyContent: 'space-between', 
+        <DialogTitle sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
           alignItems: 'center',
           color: 'white'
         }}>
